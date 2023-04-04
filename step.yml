@@ -316,6 +316,24 @@ inputs:
       value_options:
       - "false"
       - "true"
+  - auto_grant_permissions: "true"
+    opts:
+      category: "Test setup"
+      title: "Auto-grant runtime permissions"
+      summary: |
+        Whether to grant runtime permissions on the device before the test begins.
+        ```
+        By default, all permissions are granted.
+        ```
+      description: |
+        Whether to grant runtime permissions on the device before the test begins.
+        ```
+        By default, all permissions are granted.
+        ```
+      is_required: true
+      value_options:
+        - "true"
+        - "false"
   - environment_variables:
     opts:
       category: "Test setup"

@@ -170,10 +170,11 @@ func startTestRun(configs ConfigsModel, testAssets TestAssetsAndroid) error {
 	testModel.TestSpecification = &testing.TestSpecification{
 		TestTimeout: fmt.Sprintf("%fs", configs.TestTimeout),
 		TestSetup: &testing.TestSetup{
-			EnvironmentVariables: configs.EnvironmentVariables,
-			FilesToPush:          filesToPush,
-			DirectoriesToPull:    configs.DirectoriesToPull,
-			Account:              account,
+			DontAutograntPermissions: !configs.AutoGrantPermissions,
+			EnvironmentVariables:     configs.EnvironmentVariables,
+			FilesToPush:              filesToPush,
+			DirectoriesToPull:        configs.DirectoriesToPull,
+			Account:                  account,
 		},
 	}
 
