@@ -38,7 +38,7 @@ type ConfigsModel struct {
 
 	// test setup
 	AutoGoogleLogin          bool   `env:"auto_google_login,opt[true,false]"`
-	AutoGrantPermissions     bool   `env:"auto_grant_permissions"`
+	AutoGrantPermissions     bool   `env:"auto_grant_permissions,opt[true,false]"`
 	EnvironmentVariablesList string `env:"environment_variables"`
 	EnvironmentVariables     []*testing.EnvironmentVariable
 	ObbFilesList             string `env:"obb_files_list"`
@@ -107,7 +107,7 @@ func (configs *ConfigsModel) print() {
 	log.Printf("---")
 
 	log.Printf("- TestType: %s", configs.TestType)
-	log.Printf("- AutoGrantPermissions: %s", configs.AutoGrantPermissions)
+	log.Printf("- AutoGrantPermissions: %t", configs.AutoGrantPermissions)
 	// instruments
 	if configs.TestType == testTypeInstrumentation {
 		log.Printf("- TestApkPath: %s", configs.TestApkPath)
